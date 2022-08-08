@@ -1,0 +1,49 @@
+How to access AWS
+
+There are 3 options 
+ - AWS Management console(protected by passowrd + mfa)
+ - AWS Command Line Interface(CLI) : protected by access keys
+ - AWS Software Development Kit(SDK) : for code -protected by access keys
+ 
+- Access keys are generated through AWS Console
+- Access key id~=username
+- Secret access key ~=passowrd
+
+
+What is AWS CLI
+-A tool that enables you to interact with AWS services using commands in your command -line shell
+-direct access to the public APIs of AWS services
+-You can develop scrips to manage your resources
+
+What is AWS SDK
+-Language-specific APis
+- Enables you to access and manage AWS services programmitaclly
+-embedded within your application
+-Supports
+ -sdk(js,python,php,.net,ruby,java)
+ -mobile sdks(android,ios)
+ -IOT device sdks
+ 
+ e-g- AWS Cli is built on AWS Sdk for python
+ 
+ 
+ Install aws cli on windows , macos , linux
+ -----------------------
+ 
+ search aws cli for windows/macos/linux in google --> download version 2 --> then click on link
+ 
+ -go to command cli and write aws --version to check whether aws is installed or not
+ 
+ 
+ aws cli hands on
+ ----------------
+ write aws configure in cmd
+ 
+ then enter access key id downloaded from secret keys -access keys
+ then enter secret access key
+ default region name 
+ 
+ 
+ aws iam list-users
+
+ 
