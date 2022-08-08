@@ -1,0 +1,43 @@
+strong passwords = higher security
+
+you can setup password polidy:
+ -min passowrd length
+ -require specific character types
+   1) includung upper char
+   2) lower char
+   3) numbers
+   4) non -aplhanumeric characters
+- allow all IAM users to change their own passwords
+ - require users to change their password after some time(password expiration)
+ -prevernt password reuse
+ 
+ 
+ 
+ Multi factor authentication (MFA)
+ -MFA can be said as passowrd you know+ device you own
+ 
+ 
+ MFA options in AWS
+ 
+ -virtual MFA(google authentication)
+ -Authy(multi device - supports multiple tokens on same device)
+ -U2F security key like YibiKey (it is a physical device liek usb). Support for multiple root and IAM users using a single security key
+ -Harware key FOb MFA Device
+ -In the US, the AWS GovCloud then you have a special Key Fob
+ 
+ 
+ MFA hands on
+ ------------------
+ 
+ To add Password Policy
+ In IAM go to the Acoount Settings --> Change password Policy . Then add Password Policy
+ 
+ 
+ For mFa setup
+ 
+ Go to your name upwards --> Your security credentials --> MFA --> Activate MFA
+ 
+ Add 2 consecutive mFA code to signup from the device
+ 
+ 
+ 
