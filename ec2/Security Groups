@@ -1,0 +1,66 @@
+Security Groups are fundamental of netwrok security in AWS
+tHEY control how traffic is allowed into or out of our EC2 instances
+
+Security group only contains allow rules
+Security groups rules can reference by IP or by security group
+
+Security groups are acting as a "firewall" on ec2 instances
+They regulate 
+ - access to the ports
+ - authorized ip ranges - ipv4 and ipv6
+ -control of inbound network(from other to the instance)
+ -contro; of outbound network(from the instance to other)
+ 
+ 
+ - Security group can be multiple instances
+ -Locked down to a region/VPC combination
+ -Does live "outside" the ec2 -if traffic is blocked the ec2 instance wont see it
+ -Its good to maintain one seprate security group for ssh access
+ -If your application is not accessible , then its security group issue
+ -If your application gives a "connection refused" eroor, then it's an appication eroor or it's not launched
+  -All inbound traffic is bloecked by defaukt
+  -All outbound traffic is authorized by default
+  
+  
+  Classic ports 
+  22 ssh(secure shell) - log in to linux instance
+  21 ftp(file transfer protocol) -uploafd files into a file share
+  22 sftp (secure file transfer protocol) -upload files using ssh
+  80 http-access unsecured websites
+  443- https -access secured websites
+  3389 rdp(remote dekstop isntance_ -log into a windows instance
+  
+  
+  SSH
+  ----------------
+  iF YOU HAVE MAC/LINUX / WINDOWS >=10 then ssh would work good
+   for windows greater or than less 10 you can use putty too
+   Ec2 instance connect can be valid for all type of os
+   
+   
+   - SSH is one of the most important function. It allows you to controla remote machine ,all using a command line
+   
+   ensure there are no spaces in opem file
+   
+  ssh -i firstinstanceec2.pem ec2-user@44.203.194.73
+  
+  where cmd is done where pem while is prestn and then @is your public ip
+  
+  -check whoami
+  -check ping google.com
+  
+  ctrl+d to exit from session
+  
+  For putty (you need ppk file , if you was have key ass pppk file then thats good else go to puttygen add your pem file , private key then download ppk file)
+  
+  go to putty then go to session , add instance name with ip , then go to connection --> ssh --> auth then browse and add that file to and then go to session and save connect
+  
+  if you have permission issues when you add pem file then go to the file right click stop inheritenance , add your user and give it all permissions
+  
+  ec2 instance connect post a temporary ssh key so you need not to put it
+  
+ec2 instances role demo
+-------------------------------------
+  Provide aws credentials to ec2 by creating a role and attaching the iamaccessreadonly role to the ec2 security . Do not do aws configure to add key and password to it .
+  
+  
