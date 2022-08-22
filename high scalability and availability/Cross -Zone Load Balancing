@@ -1,0 +1,13 @@
+Cross Zone Load Balancing - each load balancer instance dsitributes evenly accross all registered instances in all AZ
+
+Without crozz zone requests are distributedd in the instances of the node of the Elastic Load balancer
+
+Suppopse there are 2 zones , ( AZ1 and AZ2) tehy ar e2 and 8 instances in each respectively . With cross zone the load will be going ( 100 / (2+8) ) = 10 % each to each EC2 
+For non cross the load will transfered to 50 % per each node . The first will be getting (50/2 =25% per each instamce) , 25/6 = 6.25 % per EC2
+
+For ALB cross -zone is laways on . 
+
+Network Loab BaLNCER is disable by default . You pay charges for  inter AZ data if enabled . 
+
+Classic Load Balancer is disabled by default . Go to description of  the load balancer ypu can edit it from there
+
