@@ -1,0 +1,14 @@
+Deploy, scale , and manage a fleet of 3rd party network virtual appliances in AWS
+
+Operates at Layer 3 (network layer) - IP Packets
+Combines THE FOLLOWING FUNCTIONS -
+ - Transparent Network Gateway - single entry / exit for all traffic
+  - Load Balancer - distributes  traffic to your virtual appliances
+  
+ Uses the GENEVE protocol on port 6081 
+ 
+ Target Group-
+  -EC2 instances
+   -IP addresses -must be private IP's
+   
+   
