@@ -1,0 +1,24 @@
+
+Classic Load Balancer(v1)
+-Supports tcp (layer 4) , HTTP, HTTPS (Layer 7)
+-healths checks are TCP or HTTP based
+-Fixed hostname xxx.region.elb.amazonaws.com
+
+
+Application Load Balancer (ALB)
+-Application load balancers is layer 7(http)
+- Load balacing to multiple HTTP applications across machines(target groups)
+-load balcing to multiple applications on the same machine
+-Support for HTTP/2 and websocket
+- Support rediects (from HTTP to HTTP for example)
+- Roting tables to different target grousp
+ - routing based on path in URL
+ - roting based on hostname is URL
+ -Routing based on query string, meaders
+ 
+ - Has a port mapping to redirect to a dynamic port in ECS
+ 
+ -Fixed hostname
+ -the applicationb serves dont see the IP of the client fdirectly
+  -the true IP of the client is inserted in the header x-forwaded for
+  
