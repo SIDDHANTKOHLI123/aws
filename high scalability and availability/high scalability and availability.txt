@@ -1,0 +1,20 @@
+Scalability means that application / system can handle greater loads by adapting
+
+There are 2 kinds of scalability -
+ -Vertical Scalability
+ -Horizontal Scalability
+
+Vertical Scalability -
+Increasing the size of the instance . It is used for non distributed systems like database. RDS, ElastiCache. 
+There is always limit
+
+Horizontal Scalability
+Increasing the number of instances/systems for your application
+Horizontal scaling implies ditsributes systems
+
+High Availability
+High avaialability means running your application / system in atleast 2 data centers(==availability zones)
+The goal of high availbilty is to minimise data loss
+
+Scale out means increasing the no if instances
+Scale in means decreasing no of instances
