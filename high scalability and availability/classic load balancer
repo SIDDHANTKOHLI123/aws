@@ -22,3 +22,21 @@ Application Load Balancer (ALB)
  -the applicationb serves dont see the IP of the client fdirectly
   -the true IP of the client is inserted in the header x-forwaded for
   
+  
+  Traget groups fro ALB
+-EC2 instances
+-IP addresses
+-Lamba function
+  
+Network Load Balancer(NLB)
+Forward TCP& UDP traffic to your instances
+-handle millions of requests per seconds
+-less latency ~100 ms (vs 400 ms for ALB)
+
+NLB has one static IP per AZ , and supports assigning Elastic IP
+nlb ARE USED FOR EXTREME performance, TCP or UDP
+
+Traget groups fro NLB
+-EC2 instances
+-IP addresses
+-Application Load balancer 
