@@ -1,0 +1,27 @@
+Load balance are servers that forwars traffic to multiple servers downstream
+
+Why ?
+- SPread load across mulktiple downstream instances
+Expose a single point of access(DNS) to your applicatipn
+Seamlessly handle failures if downstream instances
+Do regular health checks to your instances
+Provide SSL termination(HTTPS) for your webistes
+Enforce stickiness with cookies
+High availability across zones
+Seprate ppublic traffic from private traffic
+
+
+Health Chcks
+-They are crucial for Load Balancers
+-they enable the load balancer to know if instances it forwards traffic to are avaialble to reply to requests
+-The health check is done on a port and a route
+- If response is not 200(ok_ , then the instance is unhealthy
+
+
+Types of load balancers
+
+4 TYPES OF MANAGER lOAD BALANCERS
+-Classic Load balancer - 2009 - HTTP , HTTPS, TCP, SSL (secure tcp)
+-Application Load balancer - 2016 - HTTP , HTTPS, Websocket
+ -Network Load balancer - 2017 - TCP, TLS(secure TCP) , UDP
+-Classic Load balancer - 2020 - operates at layer 3 (Network layer) - IP Protocol
