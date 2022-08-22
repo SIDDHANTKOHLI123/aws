@@ -1,0 +1,21 @@
+SSL / TLS Basics
+
+- An SSL Certficate allows traffic between your clients and your load balancer to be encrypted in transit (in flight encryption)
+- SSL refers to Secure Sockets Laey, used to encrypt connections
+- TLS refers to Transfer Layer Security , which is newwer version
+- Public SSL certicated are issued by certificate authprites(CA)
+-SSL certicates have expiration date and need to be encrypted
+
+- Youcan manger certificates using ACM (AWS certificate Manager)
+
+
+
+Connection Draining
+
+- For clb is called connection draining
+-registeration delay for alb & nlb
+
+- Time to complete "in-flight-requests" while the instance is de-regitsering or unhealthy
+-STop senindg new requests to the ec2 instances which is de-registering
+-between 1 to 3600 secs (default 300 secs)
+can be disabled(SET TO 0)
