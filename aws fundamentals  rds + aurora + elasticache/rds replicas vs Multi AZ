@@ -1,0 +1,29 @@
+RDS Read Replicas for read scalability
+
+- upto 5 read replicas
+-Within az , cross az or cross region
+-replication is ASYNC so reads are eventually consitent
+-Replicas can be promoted to their own DB
+- Applications must update the connection string yo leverage read replicas
+
+Use cases
+-You have a production database that is taking on normal load
+-Ypou want to run a reporting application to run some analytics
+-You can create a Read replica to run the new workload there
+-The production application is unaffected
+-Read replicas are used for select(=read) only kind of statements (not insert,update,delete)
+
+RDS Reas Replicas -Network Cost
+-in AWS there's a netwrok cost whern data goes from one AZ to another
+-For RDS read replicas within the same region , then you dont have to pay fee
+
+
+RDS Multi AZ(Disaster recovery)
+-SYNC replication
+-One DNS name - auotmatoc app failover to standy
+-increase availabilty
+-Failover in case of loss of AZ , Loss of network , instance or storage failure
+_No manual intervemtion
+-Not used for scaling
+
+- NOte :------ The read replicas can be setup as Multi AZ for Disaster Recovery(DR)
