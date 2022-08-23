@@ -1,0 +1,35 @@
+The same way RDS is to get manages RElational Databases
+Elasticahce is to get managed Redis or Memcached
+Cahces are in memort databases with really high performance , low latency
+Help reduce load off databses fpr read intensive workloads
+Helps make your application stateles
+AWS takes care of OS maintenace /patching , optimizations, setup , config , monitoring , failure recovery or backuos
+Using ElastiCache involves heavy application code changes
+
+
+ElastCache Solution Architecture -DB Cache
+- Application queries ElastiCache , if not available , get from RDS and store in ELastiCache
+- Hleps relieve load in RDS
+-Cache must have an invalidation stratergy to make sure only the most current data is used in there
+
+
+ElastCache Solution Architecture -User Session Store
+-User logs into any of the aplpication
+-The application writes the session data into ElastiCcahe
+-The user hits another instance of our application
+-The instance retrieves the data and the user is already logged in
+
+
+ElastiCache - REDIS VS Memcached
+-Multi AZ with auto -failover
+-Read replicas to scale reads and have high availability
+-Data durability using AOF persistence
+-backup- and restore features
+
+
+MemCached
+ -multi node for partioning of data (sharding)
+ -No g=high avaialability(replication)
+ -non persistent
+ -no backup and restore
+ -multo threases architecture
