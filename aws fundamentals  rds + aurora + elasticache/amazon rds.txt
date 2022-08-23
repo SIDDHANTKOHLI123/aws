@@ -1,0 +1,46 @@
+RDS sstands for Relational Database Service
+It is a managed DB service for Db use SQL as a query language
+It allows you to create databases,the RDS service, in the cloud,and these databases will be managed by AWS
+ -Postgres
+ -MySQL 
+ -MariaDB
+ -Oracle
+ -Microsoft SQL Server
+ -Aurora(AWS Proprietary Database)
+
+Advantage over using RDS versus deploying DB on EC2
+- rds is a managed service :
+  -Automated provisioning , OS patching
+  -Continous backups and restore to specific timestamp
+  -Monitoring dashboards
+  -Read replicas for improved read performance
+  -Multi AZ setuo for DR (Disaster recovery)
+  -Maintenance windows for upgrades
+  -Scaling capability (verical and horizontal)
+  -Storage backed by EBS (gp2 or io1)
+
+-But you cant SSH into your instances
+
+RDS Backup 
+ -Backups are automatically enabled in RDS
+ -Automated backups :
+   -Daily full backup of the databse (during the maintenance window)
+   -Transaction logs are backed-up by RDS every 5 minutes
+   - => ability to restore to any point in time (from oldest backup to 5 minutes ago)
+   - 7 days retention (can be increased to 35 days)
+
+-DB Snapshots
+  -Manually triggered by user
+  -Retention of backup for as long as you want 
+
+RDS -Storage Auto Scaling
+ -helps you increase storage on your RDS DB instance dynamically
+ -When RDS detects you can running out of free databse storage , it scales automatically
+ - Avoid manually scaling your database storage
+ - You have to set Maximum Storage Threshold(max limit of db storage)
+ -Automatically modify storage if :
+   - Free storage is less than 10% of allocated sotrage
+   -Low -storage lasts at least 5 minutes
+   - 6 hrs have passed since last modification
+-Useful for application with unpredictable data load
+- is avaialble for all db engines (postgres,sql,etc)
