@@ -27,3 +27,14 @@ _No manual intervemtion
 -Not used for scaling
 
 - NOte :------ The read replicas can be setup as Multi AZ for Disaster Recovery(DR)
+
+
+
+rDS -FROM SIngle az to Multi az
+-zero downtime operation (no need to stop the db)
+-Just click on "modify the databse"
+
+-tHE FOLLOWING HAPPENS INTERNALLY -
+  -A snapshot is taken
+  - A new DB is restored from the snapshot in a new AZ
+  -Synchornization is established between the two databses 
