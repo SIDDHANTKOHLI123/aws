@@ -1,0 +1,55 @@
+RDS security 
+
+At rest encryption
+ -Possibility to encrypt the master and read replicas with AWS KMS -AES-256 Ecnryprion
+ -encryption has to be deined at launch time
+ -If the master is not encrypted , the read replicas cannot be encrypted
+ -transparent data encryption(tde) available for Orcle and SQL Server
+ 
+
+In flight encryption
+  - SSL certificates to encrpyt data to RDS in flight
+  - Provide SSL options with trust certificate when connectiong to database
+  -To enforce SSL:
+     -postgreSQL: rds.force_ssl=l in AWS RDS Console(Parameter Groups)
+     -MYSQL : Within the DB : 
+       GRANT USAGE ON *.* TO 'mysqluser'@'%' REQUIRE SSL;
+ 
+  RDS Encryption Operations
+  -Encryption RDS backups 
+     -Snpashpts of un-encrypyed RDS database are un-encrypted
+     -Snpashpts of encrypyed RDS database are encrypted
+     -Can copy a snapshot into an encrypted one
+     
+ To encrypt an un-encrypted RDS database:
+   -Create a snapshot of the un-encrypted database
+   -Copy to the snapshot and enable encryption for the snapshot
+   -Restore the databse from the encryptes snapshot
+   -migrate applications to encyrpted one
+   
+   
+   
+   RDS sECURITY -nETWORK & IAM
+   -network Security 
+      -RDS databses are usually deployed within a private subnet , not in a public one
+      -RDS security works by leveraging security groups (the same concept as for EC2 instances) - it controls which IP/security group can communcate with RDS
+      
+   - Access Manageemnt
+     -IAM plocies whelp who can manage AWS RDS(through the RDS API)
+     -tRADITIONAL uSERNAME AND Password can be used to login into the databse
+     -IAM-based authentocation can be used to login into RDS MySQL & PostgreSQL
+     
+     
+   RDS -IAM Authentication
+    -IAM database authenication works with MySQL and PostgreSQL
+    -You dont need a password , just and authentication token obtained through IAM & RDS API Clls
+    -Auth token has a lifetime if 15 minutes
+    -Benefits :
+     -Network in/out must be encrypted using SSL
+     -IAM to centrally manage users instead of DB
+     -Can leverage IAM roles and EC2 instance profiles for easy integration
+     
+   
+   
+   
+   
