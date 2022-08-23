@@ -33,3 +33,28 @@ MemCached
  -non persistent
  -no backup and restore
  -multo threases architecture
+
+
+ElastCcahe Security 
+
+ - do not support IAM authentication
+ 
+ REDIS AUTH
+  -you can ser a 'password/token' when you create a REdis cluster
+  -this is an extra level of security for your cache (on top of security groups)
+-SUpport SSL in fligh encryption
+
+
+Mmemcacehed
+- Supports SASL-bases authentication (adanaced)
+
+
+Patterns For ElastiCcaged
+-lazy loading : all the read data is cached , data can become stale in cache
+-write through - adds or update data in the cache when written to a DB (No stale data)
+- session store -  store temporary session data in a cache (using ttl features)
+
+Use cases of ElatCache (Redis)
+-Gaming leaderboards are computationally complex
+-redis sorted sets guarantee both uniqueness and element ordered
+-each time a new element is addes , it's ranked in real time , then added in correct order
